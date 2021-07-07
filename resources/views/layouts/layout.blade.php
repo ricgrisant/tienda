@@ -70,7 +70,60 @@
                 </div>
             </div>
         </footer>
-        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+        <script>
+            // Recibir la data de manera dinamica con jquery
+            $(document).ready(function () {
+                $('.btn-detalleProducto').click(function (e) {
+                    //Obtenemos el id del producto a mostrar de manera dinamica
+                    //Enviado del botón ver detalle 
+                    const idProducto = $(this).attr('data-id');
+
+                    $.ajax({
+                        type: "GET",
+                        url: "/productos/" + idProducto,
+                        data: {
+                            "id": idProducto
+                        },
+                        success: function (datos) {
+                            $('.modal-title').html(datos.nombre);
+                            $('.img-producto').attr("src", datos.url_imagen);
+                            $('.precio').html('L.' + datos.precio);
+                            $('.descripcion').html(datos.detalle);
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
+
+<!-- Modal detalle de Productos -->
+<div class="modal fade" id="ModalDetalleProductos" tabindex="-1" aria-labelledby="ModalDetalleProductosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title col text-center" id="ModalDetalleProductosLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+              <div class="row">
+                  <img class="img-producto img-fluid" src="" alt="producto">
+              </div>
+              <div class="row">
+                  <h1 class="precio m-2"></h1>
+              </div>
+              <div class="row">
+                <p class="descripcion m-2"></p>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

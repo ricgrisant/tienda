@@ -19,3 +19,8 @@ footer{
 .redes{
     margin: 30px;
 }
+
+.btn-light{
+    color: white;
+    background-color: #0a2744;
+}

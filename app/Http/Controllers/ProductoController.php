@@ -21,6 +21,7 @@ class ProductoController extends Controller
     //Función para mostrar un único producto
     public function show($id)
     {
-        
+        $producto = Producto::findOrFail($id);
+        return $producto;
     }
 }
