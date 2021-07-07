@@ -24,3 +24,11 @@ footer{
     color: white;
     background-color: #0a2744;
 }
+
+.form-nuevo-msg{
+    margin-left: 10px;
+    background: whitesmoke;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}

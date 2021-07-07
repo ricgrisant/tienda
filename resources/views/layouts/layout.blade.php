@@ -19,9 +19,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
-                    <span class="brand-name">Tienda Sube<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                      </svg></span> 
+                    <span class="brand-name">Tienda Sube</span> 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,7 +28,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/restaurants">
+                            <a class="nav-link active" aria-current="page" href="/">
+                                <span>Productos</span> 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/mensajes/crear">
                                 <span>Contáctanos</span> 
                             </a>
                         </li>
@@ -46,6 +49,8 @@
 
         <div class="main" style="height: 100%">
             @yield('productos')
+
+            @yield('contacto')
         </div>
         
 
