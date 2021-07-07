@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/restaurants/create">
+                            <a class="nav-link" href="/home">
                                 <span>Administrar</span> 
                             </a>
                         </li>
