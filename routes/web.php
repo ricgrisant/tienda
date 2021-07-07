@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Productos
 Route::get('/',[ProductoController::class,'index']);
 Route::get('/productos/{id}',[ProductoController::class,'show']);
+
+// Mensajes
+Route::get('/mensajes/crear', [MensajeController::class,'create']);
+Route::post('/mensajes', [MensajeController::class,'store']);
