@@ -22,3 +22,7 @@ Route::get('/productos/{id}',[ProductoController::class,'show']);
 // Mensajes
 Route::get('/mensajes/crear', [MensajeController::class,'create']);
 Route::post('/mensajes', [MensajeController::class,'store']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
