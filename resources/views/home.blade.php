@@ -4,24 +4,8 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12">
-            <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <button type="button" class="btn btn-dark position-relative">
-                        Mensajes
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                          99+
-                        </span>
-                      </button>
-                </li>
-              </ul>
-        </div>
-
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header text-center">{{ __('Dashboard') }}</div>
+            <div class="card shadow">
+                <div class="dash-card card-header text-center">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -29,9 +13,26 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <p class="text-center">Haz ingresado como administrador de la tienda!</p>
+                    <p class="text-center">Selecciona una opción de abajo para administrar!</p>
                 </div>
+
+                {{-- botones de opciones a menu del admin --}}
+                <ul class="nav nav-tabs justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/productos/admin">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/mensajes/admin">
+                        Mensajes
+                            <span class="text-white position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                              99+
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>

@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 // Productos
 Route::get('/',[ProductoController::class,'index']);
+Route::get('/productos/admin',[ProductoController::class,'adminIndex'])->middleware('auth');
 Route::get('/productos/{id}',[ProductoController::class,'show']);
+
 
 // Mensajes
 Route::get('/mensajes/crear', [MensajeController::class,'create']);

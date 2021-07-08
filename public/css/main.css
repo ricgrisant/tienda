@@ -32,3 +32,9 @@ footer{
     border-radius: 10px;
     margin-bottom: 100px;
 }
+
+.dash-card{
+    color: white;
+    background: #0a2744;
+    font-size: 1.2rem;
+}
