@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[ProductoController::class,'index']);
 Route::get('/productos/admin',[ProductoController::class,'adminIndex'])->middleware('auth');
 Route::get('/productos/{id}',[ProductoController::class,'show']);
+Route::post('/productos', [ProductoController::class,'store']);
 
 
 // Mensajes

@@ -94,7 +94,7 @@
                         },
                         success: function (datos) {
                             $('.modal-title').html(datos.nombre);
-                            $('.img-producto').attr("src", datos.url_imagen);
+                            $('.img-producto').attr("src",'uploads/img/productos/' + datos.url_imagen);
                             $('.precio').html('L.' + datos.precio);
                             $('.descripcion').html(datos.detalle);
                         }
@@ -131,4 +131,4 @@
         </div>
       </div>
     </div>
-  </div>
+</div>

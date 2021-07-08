@@ -19,30 +19,27 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <p>Productos que aparecerán en el catálogo principal.</p>
                 </div>
-
-                {{-- botones de opciones a menu del admin --}}
-                <ul class="nav nav-tabs justify-content-center">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-dark position-relative">
-                            Mensajes
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                              99+
-                            </span>
-                          </button>
-                    </li>
-                </ul>
-
             </div>
         </div>
     </div>
 
     <div class="row">
+        @if (session('mensaje'))
+            <div class="alert col-12 m-2 alert-success alert-dismissible text-center fade show" role="alert">
+                {{ session('mensaje') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+    </div>
+
+    <div class="row">
         <div class="col-12 m-4">
-            <button type="button" class="btn btn-light float-end">Agregar Producto</button>
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#ModalAgregarProducto">
+                Agregar Producto
+              </button>
         </div>
     </div>
 

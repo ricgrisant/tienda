@@ -6,7 +6,7 @@
             <div class="col-12">
                 <h2 class="text-center m-4">Envianos un Mensaje</h2>
             </div>
-            {{-- if delete action was campleed successfully --}}
+            
             @if (session('mensaje'))
                 <div class="alert col-12 m-2 alert-success alert-dismissible text-center fade show" role="alert">
                     {{ session('mensaje') }}
